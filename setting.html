@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Temperature Sensor</title>
+
+    <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="assets/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/colors/default.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="fix-header">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="index.html">
+                        <b>
+                            <img src="assets/images/admin-logo.png" alt="home" class="dark-logo" />
+                            <img src="assets/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                        </b>
+                        <span class="hidden-xs">
+                            <img src="assets/images/admin-text.png" alt="home" class="dark-logo" />
+                            <img src="assets/images/admin-text-dark.png" alt="home" class="light-logo" />
+                        </span> </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="assets/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">TeoNguyen</b><span class="caret"></span> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img"><img src="assets/images/users/varun.jpg" alt="user" /></div>
+                                    <div class="u-text">
+                                        <h4>Teo Nguyen</h4>
+                                        <p class="text-muted">teonguyen@gmail.com</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="profile.html"><i class="ti-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+        </nav>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="index.html" class="waves-effect"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="temperature-report.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Temperature Report</a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Setting</a>
+                    </li>
+                    <li>
+                        <a href="error.html" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Error Page</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Setting</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Setting</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="white-box">
+                            <h3 class="m-b-0"><b>Apparatus Manage</b> </h3>
+                            <p class="text-muted m-b-30 font-13"> Turn on and off apparatus (Air conditioner, Temperature sensor) </p>
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="white-box analytics-info" style="border: 1px solid #e4e7ea;">
+                                        <h3 class="box-title">Temperature Sensor</h3>
+                                        <ul class="list-inline two-part">
+                                            <li>
+                                                <div id="sparklinedash"></div>
+                                            </li>
+                                            <li class="text-right"><i class="ti-arrow-up text-success"></i>
+                                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-power-off"></i> </button>
+                                                <button type="button" class="btn btn-info btn-circle"><i class="fa fa-power-off"></i> </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="white-box analytics-info" style="border: 1px solid #e4e7ea">
+                                        <h3 class="box-title">Air Conditional</h3>
+                                        <ul class="list-inline two-part">
+                                            <li>
+                                                <div id="sparklinedash2"></div>
+                                            </li>
+                                            <li class="text-right"><i class="ti-arrow-up text-purple"></i>
+                                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-power-off"></i> </button>
+                                                <button type="button" class="btn btn-info btn-circle"><i class="fa fa-power-off"></i> </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="white-box">
+                            <h3 class="m-b-0"><b>Temperature Setting</b> </h3>
+                            <p class="text-muted m-b-30 font-13"> Setting the appropriate temperature to turn on and off the air conditioner </p>
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Maximum temperature</label>
+                                            <input type="number" class="form-control" placeholder="Enter maximum temperature to turn on AC"> </div>
+                                        <div class="form-group">
+                                            <label>Normal temperature</label>
+                                            <input type="number" class="form-control" placeholder="Enter minimum temperature to turn off AC">
+                                        </div>
+                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save</button>
+                                        <button type="submit" class="btn btn-inverse waves-effect waves-light">Reset</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer text-center"> 2018 &copy; Temperature Sensor Hồng Phong - Ngọc Ánh - Thanh Thùy - Ngọc Trâm </footer>
+        </div>
+    </div>
+
+    <script src="assets//jquery/dist/jquery.min.js"></script>
+    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <script src="assets/js/dashboard1.js"></script>
+    <script src="assets/toast-master/js/jquery.toast.js"></script>
+</body>
+
+</html>
