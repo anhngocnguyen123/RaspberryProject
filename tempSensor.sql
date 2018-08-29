@@ -56,6 +56,14 @@ foreign key (dateId) references date(id),
 foreign key (timeId) references time(id)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
+INSERT INTO temperatureDatetime(dateId, timeId, temperature, humidity, isDelete, createdAt)
+	VALUE(1, 1, 25, 65, 0, '2018-08-29 17:22:00'),
+		 (1, 2, 24, 55, 0, '2018-08-29 17:22:00'),
+         (1, 3, 23, 65, 0, '2018-08-29 17:22:00'),
+         (1, 4, 26, 70, 0, '2018-08-29 17:22:00'),
+         (1, 5, 26, 50, 0, '2018-08-29 17:22:00'),
+         (1, 6, 25, 65, 0, '2018-08-29 17:22:00');
+
 CREATE TABLE tempPeriod(
 id int not null auto_increment primary key,
 namePeriod enum('Morning','Afternoon'),
@@ -65,3 +73,7 @@ isDelete int(1) not null default 0,
 createdAt datetime not null,
 updatedAt datetime not null
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8; 
+
+INSERT INTO tempPeriod(namePeriod, maximumTemp, nomalTemp, isDelete, createdAt, updatedAt)
+	VALUE('Morning', 30, 28, 0, '2018-08-29 17:22:00', '2018-08-29 17:22:00'),
+         ('Afternoon', 35, 32, 0, '2018-08-29 17:22:00', '2018-08-29 17:22:00');
