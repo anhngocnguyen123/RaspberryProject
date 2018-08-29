@@ -58,7 +58,6 @@ foreign key (timeId) references time(id)
 CREATE TABLE tempPeriod(
 id int not null auto_increment primary key,
 namePeriod enum('Morning','Afternoon'),
-minimumTemp int not null,
 maximumTemp int not null,
 nomalTemp int not null,
 createdAt datetime not null,
