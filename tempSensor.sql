@@ -50,6 +50,7 @@ dateId int not null,
 timeId int not null,
 temperature int not null,
 humidity int not null,
+isDelete int(1) not null default 0,
 createdAt datetime not null,
 foreign key (dateId) references date(id),
 foreign key (timeId) references time(id)
@@ -60,6 +61,7 @@ id int not null auto_increment primary key,
 namePeriod enum('Morning','Afternoon'),
 maximumTemp int not null,
 nomalTemp int not null,
+isDelete int(1) not null default 0,
 createdAt datetime not null,
 updatedAt datetime not null
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8; 
