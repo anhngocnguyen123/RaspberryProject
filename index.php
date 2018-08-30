@@ -69,7 +69,7 @@ require_once ('connect_database.php');
         });
     </script>
     
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(document).ready(function () {
             $("#error").click(function () {
                 $.ajax({url: 'errors.php',
@@ -82,7 +82,7 @@ require_once ('connect_database.php');
                 });
             });
         });
-    </script>
+    </script> -->
     
     <script type="text/javascript">
         $(document).ready(function () {

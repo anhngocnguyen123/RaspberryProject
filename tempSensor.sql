@@ -1,6 +1,6 @@
-CREATE DATABASE tempDatetime; 
+-- CREATE DATABASE tempDatetime; 
 ALTER SCHEMA `tempDatetime` DEFAULT COLLATE utf8_unicode_ci;
-USE tempDatetime; 
+-- USE tempDatetime; 
 
 CREATE TABLE date(
 id int auto_increment not null primary key,

@@ -14,7 +14,7 @@
                 <a id="setting" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Setting</a>
             </li>
             <li>
-                <a id="error" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Error Page</a>
+                <a href="errors.php" class="waves-effect"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>Error Page</a>
             </li>
         </ul>
     </div>
