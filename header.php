@@ -19,28 +19,31 @@
                     <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> 
                 </form>
             </li>
+            <?php 
+                if (isset($_SESSION['admin'])) {
+            ?>
             <li class="dropdown">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> 
-                    <img src="assets/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                    <b class="hidden-xs">TeoNguyen</b>
-                    <span class="caret"></span> 
-                </a>
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="assets/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $_SESSION['admin'] ?></b><span class="caret"></span> </a>
                 <ul class="dropdown-menu dropdown-user animated flipInY">
                     <li>
                         <div class="dw-user-box">
                             <div class="u-img"><img src="assets/images/users/varun.jpg" alt="user" /></div>
                             <div class="u-text">
-                                <h4>Teo Nguyen</h4>
+                                <h4>Hello <?php echo $_SESSION['admin'] ?></h4>
                                 <p class="text-muted">teonguyen@gmail.com</p>
                             </div>
                         </div>
                     </li>
                     <li role="separator" class="divider"></li>
-                    <li><a id="profile"><i class="ti-user"></i> My Profile</a></li>
+                    <li><a href="profile.php"><i class="ti-user"></i> My Profile</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="login.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                    <li><a href="logout.php?logout"><i class="fa fa-power-off"></i> Logout</a></li>
                 </ul>
+                <!-- /.dropdown-user -->
             </li>
+            <?php       
+                }
+            ?>
         </ul>
     </div>
 </nav>

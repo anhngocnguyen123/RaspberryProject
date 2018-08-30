@@ -94,7 +94,7 @@
                                                                         <tr>
                                                                             <th>Time</th>
                                                                             <th>Temp</th>
-                                                                            <th>Humidity</th>
+                                                                            <th>(%)</th>
                                                                             <th>Status</th>
                                                                         </tr>
                                                                     </thead>
@@ -125,7 +125,7 @@
                                                                                 <?php }else if(($row['temperature'] < 35) && ($row['temperature'] >= 25)){ ?>
                                                                                     <span class="label label-warning">
                                                                                         <?php
-                                                                                            echo 'Nomarl';
+                                                                                            echo 'Nor';
                                                                                         ?>
                                                                                     </span>
                                                                                 <?php }else{ ?>
@@ -149,7 +149,7 @@
                                                                         <tr>
                                                                             <th>Time</th>
                                                                             <th>Temp</th>
-                                                                            <th>Humidity</th>
+                                                                            <th>(%)</th>
                                                                             <th>Status</th>
                                                                         </tr>
                                                                     </thead>
@@ -174,13 +174,13 @@
                                                                                 <?php if($row['temperature'] >= 35){?>
                                                                                     <span class="label label-danger">
                                                                                         <?php
-                                                                                            echo 'HOT';
+                                                                                            echo 'Hot';
                                                                                         ?>
                                                                                     </span>
                                                                                 <?php }else if(($row['temperature'] < 35) && ($row['temperature'] >= 25)){ ?>
                                                                                     <span class="label label-warning">
                                                                                         <?php
-                                                                                            echo 'Nomarl';
+                                                                                            echo 'Nor';
                                                                                         ?>
                                                                                     </span>
                                                                                 <?php }else{ ?>
@@ -207,17 +207,6 @@
                                     </div>
                                     <button type="button" onclick='deletetemp(<?php echo $id; ?>)' class="btn btn-info btn-outline btn-circle btn-lg">
                                         <i class="fa fa-trash-o"></i> 
-                                        <?php 
-                                        if (isset($_POST['deletetemp'])) {
-                                            $id = isset($_POST['deletetemp']) ? trim($_POST['deletetemp']) : 'Empty';
-                                            $update = "UPDATE temperatureDatetime SET isDelete=1 WHERE id=$id";
-                                            if ($conn->query($update) === TRUE) {
-
-                                            } else {
-                                                echo "Error updating record: " . $conn->error;
-                                            }
-                                        }
-                                        ?>
                                     </button>
                                 </td>
                             </tr>

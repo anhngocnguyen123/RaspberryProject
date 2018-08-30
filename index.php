@@ -1,8 +1,7 @@
 <?php
-require_once ('connect_database.php');
-//if (!isset($_SESSION['user'])) {
-//    header('location:login.php');
-//}
+    session_start();
+    require_once ('connect_database.php');
+    if (isset($_SESSION['admin'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@ require_once ('connect_database.php');
     <div id="wrapper">
         <?php include 'header.php' ?>
         <?php include 'menu.php'; ?>
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="margin-top: 20px;">
             <div id="content">
                 <?php include 'dashboard.php'; ?>
             </div>
@@ -100,3 +99,9 @@ require_once ('connect_database.php');
     </script>
 </body>
 </html>
+
+<?php       
+    }else{
+        header("location:login.php");
+    }
+?>
