@@ -15,7 +15,7 @@
     <div id="wrapper">
         <?php include 'header.php' ?>
         <?php include 'menu.php'; ?>
-        <div id="page-wrapper" style="margin-top: 20px;">
+        <div id="page-wrapper">
             <div id="content">
                 <?php include 'dashboard.php'; ?>
             </div>

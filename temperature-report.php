@@ -23,6 +23,7 @@
                                 <th>TEMP (&#8451;)</th>
                                 <th>HUMIDITY (%)</th>
                                 <th>STATUS</th>
+                                <th>STATUS</th>
                                 <th width="300">MANAGE</th>
                             </tr>
                         </thead>
@@ -72,6 +73,7 @@
                                         </span>
                                     <?php } ?>
                                 </td>
+                                <td><?php echo $row1['id']; ?></td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-outline btn-circle btn-lg" data-toggle="modal" data-target="#modal_detail_<?php echo $id; ?>">
                                         <i class="fa fa-share-square-o"></i> 
@@ -205,8 +207,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" onclick='deletetemp(<?php echo $id; ?>)' class="btn btn-info btn-outline btn-circle btn-lg">
+                                    <button type="button" name="deletetemp" value="<?php echo $id; ?>" class="btn btn-info btn-outline btn-circle btn-lg">
                                         <i class="fa fa-trash-o"></i> 
+                                        <?php 
+                                        if (isset($_POST['deletetemp'])) {
+                                            // $id = isset($_POST['deletetemp']) ? trim($_POST['deletetemp']) : 'Empty';
+                                            // $update = "UPDATE temperatureDatetime SET isDelete=1 WHERE id=$id";
+                                            // if ($conn->query($update) === TRUE) {
+
+                                            // } else {
+                                            //     echo "Error updating record: " . $conn->error;
+                                            // }
+                                            echo "hdfjjagf";
+                                        }
+                                        ?>
                                     </button>
                                 </td>
                             </tr>
