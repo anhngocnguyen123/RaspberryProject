@@ -1,8 +1,8 @@
 <?php
-session_start();
+    session_start();
     $servername = "localhost";
     $db_user = "root";
-    $db_password = "123456789";
+    $db_password = "";
     $dbname = "tempDatetime";
 
     // Create connection
@@ -11,6 +11,6 @@ session_start();
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
 ?>
 

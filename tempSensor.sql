@@ -5,16 +5,19 @@ USE tempDatetime;
 CREATE TABLE date(
 id int auto_increment not null primary key,
 date date not null,
+isDelete int(1) not null default 0,
 createdAt datetime not null
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 INSERT INTO date(date, createdAt)
-VALUE ('2018-08-29', '2018-08-29 10:02:00');
+	VALUE ('2018-08-29', '2018-08-29 10:02:00'),
+		  ('2018-08-30', '2018-08-30 00:00:00');
 
 
 CREATE TABLE time(
 id int auto_increment not null primary key,
 time time not null,
+isDelete int(1) not null default 0,
 createdAt datetime not null
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
@@ -62,7 +65,15 @@ INSERT INTO temperatureDatetime(dateId, timeId, temperature, humidity, isDelete,
          (1, 3, 23, 65, 0, '2018-08-29 17:22:00'),
          (1, 4, 26, 70, 0, '2018-08-29 17:22:00'),
          (1, 5, 26, 50, 0, '2018-08-29 17:22:00'),
-         (1, 6, 25, 65, 0, '2018-08-29 17:22:00');
+         (1, 6, 25, 65, 0, '2018-08-29 17:22:00'),
+         (2, 1, 28, 58, 0, '2018-08-30 00:00:00'),
+         (2, 2, 28, 54, 0, '2018-08-30 00:30:00'),
+         (2, 25, 38, 45, 0, '2018-08-30 12:00:00');
+
+SELECT td.dateId, td.timeId, td.temperature, td.humidity, t.id, t.time 
+FROM temperatureDatetime AS td
+LEFT JOIN time AS t ON td.timeId = t.id
+WHERE timeId <= 24 ORDER BY id;
 
 CREATE TABLE tempPeriod(
 id int not null auto_increment primary key,
